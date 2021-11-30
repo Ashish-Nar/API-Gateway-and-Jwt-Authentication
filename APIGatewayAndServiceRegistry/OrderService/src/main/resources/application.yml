@@ -1,0 +1,52 @@
+#resilience4j:
+#  circuitbreaker:
+#    instances:
+#      orderService:
+#        registerHealthIndicator: true
+#        eventConsumerBufferSize: 10
+#        automaticTransitionFromOpenToHalfOpenEnabled: true
+#        failureRateThreshold: 50
+#        minimumNumberOfCalls: 5
+#        permittedNumberOfCallsInHalfOpenState: 3
+#        slidingWindowSize: 10
+#        waitDurationInOpenState: 5s
+#        slidingWindowType: COUNT_BASED
+#        timeoutDuration: 10
+#
+#management:
+#  health:
+#    circuitbreakers:
+#      enabled: true
+#  endpoints:
+#    web:
+#      exposure:
+#        include: health
+#  endpoint:
+#    health:
+#      show-details: always
+#spring:
+#  cloud:
+#    config:
+#      enabled: true
+#      uri: http://localhost:8888
+
+spring:
+  application:
+    name: ORDER-SERVICE
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
+#  cloud:
+#    bus:
+#      enabled: true
+#      refresh:
+#        enabled: true
+
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
